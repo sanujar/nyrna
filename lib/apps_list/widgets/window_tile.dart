@@ -274,6 +274,21 @@ Due to the restricted and obfuscated nature of Easy Anti-Cheat Nyrna cannot mana
                 ),
               ],
             ),
+                        ExpansionTile(
+              title: const Text('If the game/program is running as administrator...'),
+              children: [
+                MarkdownBody(
+                  data: '''
+If the game/program you are attempting to suspend has been started as administrator/with elevated permissions, Nyrna will not be able to suspend it.
+
+Please restart Nyrna with administrator rights/elevated permissions in order to suspend it.''',
+                  onTapLink: (String text, String? href, String title) {
+                    if (href == null) return;
+                    AppCubit.instance.launchURL(href);
+                  },
+                ),
+              ],
+            ),
             ExpansionTile(
               title: const Text('Report bug'),
               children: [
